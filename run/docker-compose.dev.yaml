@@ -1,0 +1,15 @@
+version: '3'
+services:
+  research_app_dev:
+    image: postgres:alpine
+    ports:
+    - "5432:5432"
+    environment:
+    - POSTGRES_USER=postgres
+    - POSTGRES_DB=research_app_dev
+    env_file: ./dev.env
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
