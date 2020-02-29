@@ -17,6 +17,8 @@ defmodule ResearchAppWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/status", StatusController, :index
+    get "/status/:item", StatusController, :detail
   end
 
   # Other scopes may use custom stacks.
